@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo font-serif-display">Studio</a>
+    <nav class="desktop-nav">
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <button id="menu-toggle">Menu</button>
+  </div>
+</header>
+
+<div id="mobile-menu">
+  <a href="work.html">Work</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main class="page" id="project-page"></main>
+
+<script src="main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params  = new URLSearchParams(window.location.search);
+    const id      = params.get('id');
+    const project = projects.find(p => p.id === id);
+    const page    = document.getElementById('project-page');
+
+    const widths = [
+      'w-full',
+      'w-full md-w-2-3 md-ml-auto',
+      'w-full md-w-half',
+    ];
+
+    if (!project) {
+      page.innerHTML = `
+        <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;">
+          <p class="font-sans-ui text-muted">Project not found</p>
+        </div>`;
+      return;
+    }
+
+    document.title = `${project.title} — Studio`;
+
+    let imageSeriesHtml = '';
+    project.images.forEach((img, i) => {
+      const wClass = widths[i % widths.length];
+      const num    = String(i + 1).padStart(2, '0');
+      const total  = String(project.images.length).padStart(2, '0');
+      imageSeriesHtml += `
+        <div class="${wClass}">
+          <div class="reveal-image image-container w-full">
+            <div class="shimmer"></div>
+            <img src="${img}" alt="${project.title} — ${i + 1}" loading="lazy"
+                 style="width:100%;display:block;object-fit:cover;" />
+          </div>
+          <p class="image-counter">${num} / ${total}</p>
+        </div>`;
+    });
+
+    page.innerHTML = `
+      <section style="min-height:100svh;position:relative;">
+        <img src="${project.cover}" alt="${project.title}" class="project-hero-img" />
+      </section>
+
+      <section class="section-padding">
+        <h1 class="font-serif-display" style="font-size:clamp(2.5rem,7vw,5rem);font-style:italic;">
+          ${project.title}
+        </h1>
+        <div style="display:flex;gap:2rem;margin-top:1rem;">
+          <span class="font-sans-ui text-muted">${project.category}</span>
+          <span class="font-sans-ui text-muted tabular-nums">${project.year}</span>
+        </div>
+        <p class="font-serif-display text-muted"
+           style="font-size:clamp(1rem,2vw,1.5rem);margin-top:2rem;max-width:36rem;line-height:1.4;">
+          ${project.subtitle}
+        </p>
+      </section>
+
+      <section class="image-series">
+        ${imageSeriesHtml}
+      </section>
+
+      <section class="section-padding cta-section">
+        <a href="work.html" class="nav-link cta-link">Back to Work</a>
+      </section>
+
+      <footer class="section-padding site-footer">
+        <div>
+          <p class="font-serif-display" style="font-size:1.125rem">Studio</p>
+          <p class="font-sans-ui text-muted" style="margin-top:0.5rem">Fashion &amp; Editorial Photography</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+        </div>
+      </footer>
+    `;
+
+    initRevealImages();
+    initImageLoad();
+  });
+</script>
+</body>
+</html>

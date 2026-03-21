@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo font-serif-display">Studio</a>
+    <nav class="desktop-nav">
+      <a href="work.html" class="nav-link">Work</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <button id="menu-toggle">Menu</button>
+  </div>
+</header>
+
+<div id="mobile-menu">
+  <a href="work.html">Work</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main class="page">
+  <section class="page-top" style="padding-left:1.5rem;padding-right:1.5rem;min-height:100svh;">
+    <div style="max-width:36rem;">
+
+      <h1 class="font-serif-display" style="font-size:clamp(2rem,5vw,4rem);margin-bottom:1rem;">
+        Contact
+      </h1>
+      <p class="font-sans-ui text-muted" style="margin-bottom:4rem;">
+        For inquiries, commissions, and collaborations
+      </p>
+
+      <a href="mailto:hello@studio.com" class="contact-email-link">
+        hello@studio.com
+      </a>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div>
+          <label class="font-sans-ui" for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div>
+          <label class="font-sans-ui" for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div>
+          <label class="font-sans-ui" for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit"
+          style="background:none;border:none;border-bottom:1px solid var(--foreground);padding-bottom:0.25rem;cursor:pointer;font-family:'Geist',system-ui,sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--foreground);display:inline-block;">
+          Send Message
+        </button>
+      </form>
+
+      <p class="font-sans-ui text-muted success-message" id="success-message">
+        Thank you. I'll be in touch soon.
+      </p>
+
+      <div class="contact-social">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section-padding site-footer">
+    <div>
+      <p class="font-serif-display" style="font-size:1.125rem">Studio</p>
+      <p class="font-sans-ui text-muted" style="margin-top:0.5rem">Fashion &amp; Editorial Photography</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+    </div>
+  </footer>
+</main>
+
+<script src="main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form       = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      successMsg.classList.add('show');
+    });
+  });
+</script>
+</body>
+</html>
