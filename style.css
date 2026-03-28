@@ -48,6 +48,7 @@ img {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  font-weight: 300;
 }
 
 .font-sans-ui {
@@ -287,7 +288,7 @@ nav.desktop-nav {
   font-weight: 400;
   font-size: clamp(3.5rem, 11vw, 9rem);
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 0.85;
   max-width: 56rem;
   color: var(--foreground);
   /* start state */
@@ -310,7 +311,7 @@ nav.desktop-nav {
 }
 
 .hero-year {
-  margin-top: 1.5rem;
+  margin-top: 5rem;
   color: var(--muted-foreground);
   /* start state */
   opacity: 0;
@@ -333,6 +334,18 @@ nav.desktop-nav {
   }
 }
 
+.featured-img-centered {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .featured-img-centered {
+    width: 70%;
+  }
+}
+
 .project-link {
   display: block;
   margin-bottom: 20vh;
@@ -343,6 +356,17 @@ nav.desktop-nav {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+}
+
+.project-img-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .project-img-centered {
+    width: 60%;
+  }
 }
 
 .work-grid {

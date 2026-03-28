@@ -5,27 +5,28 @@ const projects = [
   {
     id: 'edge',
     title: 'Edge',
-    subtitle: 'A Study in Shadow',
+    subtitle: 'Shot at Whiterock, this series sits somewhere between exposure and restraint — not just in the landscape, but in the way the body occupies it. Nothing feels fixed or performative.\n\nMasculinity here isn\'t treated as a single idea, but as something fluid, shifting from frame to frame. At times it feels grounded and self-assured, at others distant, almost untouchable. The model moves through these states without fully settling into any of them.\n\nThe result is less about defining a persona and more about allowing space for contradiction — a quiet tension between control and vulnerability, presence and escape.',
     year: '2026',
     cover: 'assets/edge.webp',
     images: ['assets/edge.webp', 'assets/work-4.jpg', 'assets/work-6.jpg'],
     category: 'Editorial',
   },
   {
-    id: 'boulevard',
-    title: 'Boulevard',
-    subtitle: 'Urban Architecture',
-    year: '2023',
-    cover: 'assets/hero-2.jpg',
-    images: ['assets/hero-2.jpg', 'assets/work-1.jpg', 'assets/work-5.jpg'],
+    id: 'street',
+    title: 'Street Style Season',
+    subtitle: 'Grafton Street doesn\'t stop for anyone. The series leans into that — finding stillness inside movement, composure inside noise. The Ganni trench coat becomes a kind of armor. Not protective in the defensive sense, but in the way certain clothes allow you to move through a space entirely on your own terms. This is street style without the casualness the term implies. Every frame feels considered — not staged, but chosen.',
+    year: '2026',
+    cover: 'assets/street-banner.jpg',
+    hero: 'assets/street-002.jpg',
+    images: ['assets/street-001.jpg', 'assets/street-002.jpg', 'assets/street-003.jpg', 'assets/street-004.jpg', 'assets/street-005.jpg', 'assets/street-006.jpg', 'assets/street-007.jpg', 'assets/street-008.jpg', 'assets/street-009.jpg'],
     category: 'Fashion',
   },
   {
-    id: 'lumiere',
-    title: 'Lumière',
-    subtitle: 'Light & Adornment',
-    year: '2023',
-    cover: 'assets/hero-3.jpg',
+    id: 'vico',
+    title: 'Vico Bathing',
+    subtitle: 'Light & Adornmen',
+    year: '2026',
+    cover: 'assets/bathing-banner.jpg',
     images: ['assets/hero-3.jpg', 'assets/work-3.jpg', 'assets/work-2.jpg'],
     category: 'Beauty',
   },
@@ -158,11 +159,11 @@ function initPageTransition() {
 ───────────────────────────────────────────────── */
 function initHeroAnimations() {
   const title = document.querySelector('.hero-title');
-  const year  = document.querySelector('.hero-year');
+  const year = document.querySelector('.hero-year');
   // Small timeout ensures the browser has painted opacity:0 first
   setTimeout(() => {
     if (title) title.classList.add('animate');
-    if (year)  year.classList.add('animate');
+    if (year) year.classList.add('animate');
   }, 50);
 }
 
