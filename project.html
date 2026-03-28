@@ -43,12 +43,6 @@
       const project = projects.find(p => p.id === id);
       const page = document.getElementById('project-page');
 
-      const widths = [
-        'w-full project-img-centered',
-        'w-full project-img-centered',
-        'w-full project-img-centered',
-      ];
-
       if (!project) {
         page.innerHTML = `
         <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;">
@@ -61,15 +55,14 @@
 
       let imageSeriesHtml = '';
       project.images.forEach((img, i) => {
-        const wClass = widths[i % widths.length];
         const num = String(i + 1).padStart(2, '0');
         const total = String(project.images.length).padStart(2, '0');
         imageSeriesHtml += `
-        <div class="${wClass}">
-          <div class="reveal-image image-container w-full">
+        <div class="project-img-centered">
+          <div class="reveal-image image-container">
             <div class="shimmer"></div>
             <img src="${img}" alt="${project.title} — ${i + 1}" loading="lazy"
-                 style="width:100%;display:block;object-fit:cover;" />
+                 style="display:block;object-fit:cover;" />
           </div>
           <p class="image-counter">${num} / ${total}</p>
         </div>`;
@@ -80,15 +73,15 @@
         <img src="${project.cover}" alt="${project.title}" class="project-hero-img" />
       </section>
 
-      <section class="section-padding">
-        <h1 class="font-serif-display" style="font-size:clamp(2.5rem,7vw,5rem);font-style:italic;">
+      <section class="section-padding project-info">
+        <h1 class="font-serif-display project-detail-title" style="font-size:clamp(2.5rem,7vw,5rem);font-style:italic;">
           ${project.title}
         </h1>
-        <div style="display:flex;gap:2rem;margin-top:1rem;">
+        <div class="project-detail-meta" style="display:flex;gap:2rem;margin-top:1rem;">
           <span class="font-sans-ui text-muted">${project.category}</span>
           <span class="font-sans-ui text-muted tabular-nums">${project.year}</span>
         </div>
-        <p class="font-serif-display text-muted"
+        <p class="font-serif-display text-muted project-detail-subtitle"
            style="font-size:clamp(1rem,2vw,1.5rem);margin-top:2rem;max-width:36rem;line-height:1.4;">
           ${project.subtitle}
         </p>
@@ -105,7 +98,7 @@
       <footer class="section-padding site-footer">
         <div>
           <p class="font-serif-display" style="font-size:1.125rem">Andre Esperidiao</p>
-          <p class="font-sans-ui text-muted" style="margin-top:0.5rem">Fashion &amp; Editorial Photography</p>
+          <p class="font-sans-ui text-muted" style="margin-top:0.5rem">Fashion &amp; Lifestyle Photography</p>
         </div>
         <div class="footer-links">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
@@ -117,6 +110,18 @@
 
       initRevealImages();
       initImageLoad();
+
+      // scroll past hero on load
+      document.querySelector('.project-hero-img')
+        ?.closest('section')
+        ?.nextElementSibling
+        ?.scrollIntoView({ behavior: 'instant' });
+
+      // animate title, meta, subtitle
+      setTimeout(() => {
+        document.querySelectorAll('.project-detail-title, .project-detail-meta, .project-detail-subtitle')
+          .forEach(el => el.classList.add('animate'));
+      }, 50);
     });
   </script>
 </body>

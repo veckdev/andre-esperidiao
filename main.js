@@ -1,6 +1,3 @@
-/* ─────────────────────────────────────────────────
-   projects data — update image paths in assets/
-───────────────────────────────────────────────── */
 const projects = [
   {
     id: 'edge',
@@ -59,9 +56,6 @@ const projects = [
   },
 ];
 
-/* ─────────────────────────────────────────────────
-   Navigation
-───────────────────────────────────────────────── */
 function initNavigation() {
   const toggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -85,7 +79,6 @@ function initNavigation() {
     });
   });
 
-  // Active link
   const file = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
     const href = (link.getAttribute('href') || '').split('/').pop();
@@ -93,9 +86,6 @@ function initNavigation() {
   });
 }
 
-/* ─────────────────────────────────────────────────
-   Scroll Reveal
-───────────────────────────────────────────────── */
 function initRevealImages() {
   const elements = document.querySelectorAll('.reveal-image');
   if (!elements.length) return;
@@ -112,9 +102,6 @@ function initRevealImages() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ─────────────────────────────────────────────────
-   Shimmer + image load fade
-───────────────────────────────────────────────── */
 function initImageLoad() {
   document.querySelectorAll('.image-container img').forEach(img => {
     const container = img.closest('.image-container');
@@ -139,9 +126,6 @@ function initImageLoad() {
   });
 }
 
-/* ─────────────────────────────────────────────────
-   Page fade-in
-───────────────────────────────────────────────── */
 function initPageTransition() {
   const main = document.querySelector('main.page');
   if (!main) return;
@@ -154,22 +138,15 @@ function initPageTransition() {
   });
 }
 
-/* ─────────────────────────────────────────────────
-   Hero animations — title slides up, year fades in
-───────────────────────────────────────────────── */
 function initHeroAnimations() {
   const title = document.querySelector('.hero-title');
   const year = document.querySelector('.hero-year');
-  // Small timeout ensures the browser has painted opacity:0 first
   setTimeout(() => {
     if (title) title.classList.add('animate');
     if (year) year.classList.add('animate');
   }, 50);
 }
 
-/* ─────────────────────────────────────────────────
-   Boot
-───────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initPageTransition();
   initNavigation();

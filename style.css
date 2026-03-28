@@ -48,7 +48,6 @@ img {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  font-weight: 300;
 }
 
 .font-sans-ui {
@@ -278,26 +277,20 @@ nav.desktop-nav {
   }
 }
 
-/* 
-  Hero title: match the print exactly.
-  Cormorant Garamond at huge size — 5rem mobile, 8–9rem desktop.
-  The text must animate up from below on load.
-*/
 .hero-title {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
   font-weight: 400;
   font-size: clamp(3.5rem, 11vw, 9rem);
   letter-spacing: -0.03em;
-  line-height: 0.85;
+  line-height: 1.05;
   max-width: 56rem;
   color: var(--foreground);
-  /* start state */
   opacity: 0;
   transform: translateY(30px);
-  /* animation fires via JS adding .animate */
   transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
     transform 1s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: 0.2s;
+  line-height: 0.85;
 }
 
 .hero-title.animate {
@@ -313,7 +306,6 @@ nav.desktop-nav {
 .hero-year {
   margin-top: 5rem;
   color: var(--muted-foreground);
-  /* start state */
   opacity: 0;
   transition: opacity 0.8s ease;
   transition-delay: 0.65s;
@@ -321,6 +313,34 @@ nav.desktop-nav {
 
 .hero-year.animate {
   opacity: 1;
+}
+
+/* ─── Project Detail Animations ─────────────────── */
+.project-detail-title,
+.project-detail-meta,
+.project-detail-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-detail-title.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.project-detail-meta.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.project-detail-subtitle.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
 }
 
 /* ─── Featured / Work sections ───────────────────── */
@@ -331,18 +351,6 @@ nav.desktop-nav {
 @media (min-width: 768px) {
   .featured-section {
     padding: 0 2rem;
-  }
-}
-
-.featured-img-centered {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 768px) {
-  .featured-img-centered {
-    width: 70%;
   }
 }
 
@@ -358,6 +366,23 @@ nav.desktop-nav {
   justify-content: space-between;
 }
 
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+}
+
+.work-img-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-title {
+  font-size: clamp(1.25rem, 3vw, 2.25rem);
+  font-style: italic;
+  font-weight: 300;
+}
+
 .project-img-centered {
   margin-left: auto;
   margin-right: auto;
@@ -369,16 +394,16 @@ nav.desktop-nav {
   }
 }
 
-.work-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 15vh;
+.featured-img-centered {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.project-title {
-  font-size: clamp(1.25rem, 3vw, 2.25rem);
-  font-style: italic;
-  font-weight: 300;
+@media (min-width: 768px) {
+  .featured-img-centered {
+    width: 70%;
+  }
 }
 
 /* ─── Project Detail ─────────────────────────────── */
@@ -386,6 +411,38 @@ nav.desktop-nav {
   width: 100%;
   height: 100svh;
   object-fit: cover;
+}
+
+.project-info {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.project-info h1 {
+  font-weight: 300;
+}
+
+/* ─── Work Hero ──────────────────────────────────── */
+.work-hero {
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+@media (min-width: 768px) {
+  .work-hero {
+    padding: 2rem 2rem 4rem;
+  }
+}
+
+.work-hero-title {
+  font-size: clamp(3.5rem, 11vw, 9rem);
+  font-weight: 300;
+}
+
+.work-hero-title em {
+  font-style: italic;
+  font-weight: 300;
 }
 
 .image-series {
@@ -408,6 +465,7 @@ nav.desktop-nav {
   color: var(--muted-foreground);
   margin-top: 0.5rem;
   text-align: right;
+  border: none;
 }
 
 /* ─── About ──────────────────────────────────────── */
