@@ -37,18 +37,18 @@
     <section class="page-top" style="padding-left:1.5rem;padding-right:1.5rem;min-height:100svh;">
       <div style="max-width:36rem;">
 
-        <h1 class="font-serif-display" style="font-size:clamp(2rem,5vw,4rem);margin-bottom:1rem;">
-          Contact
+        <h1 class="font-serif-display" style="font-size:clamp(2rem,5vw,4rem);margin-bottom:2rem;font-weight:300;">
+          <em>Contact</em>
         </h1>
         <p class="font-sans-ui text-muted" style="margin-bottom:4rem;">
-          For inquiries, commissions, and collaborations
+          Open to editorial and collaborative projects
         </p>
 
-        <a href="mailto:hello@studio.com" class="contact-email-link">
-          hello@studio.com
+        <a href="mailto:andresperidiao@icloud.com" class="contact-email-link">
+          andresperidiao@icloud.com
         </a>
 
-        <form class="contact-form" id="contact-form" novalidate>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xdapenod" method="POST">
           <div>
             <label class="font-sans-ui" for="name">Name</label>
             <input type="text" id="name" name="name" required autocomplete="name" />
@@ -71,11 +71,7 @@
           Thank you. I'll be in touch soon.
         </p>
 
-        <div class="contact-social">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
-        </div>
+        <div class="contact-social"></div>
       </div>
     </section>
 
@@ -86,8 +82,6 @@
       </div>
       <div class="footer-links">
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-link">Instagram</a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
       </div>
     </footer>
   </main>
@@ -98,10 +92,18 @@
       const form = document.getElementById('contact-form');
       const successMsg = document.getElementById('success-message');
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        form.style.display = 'none';
-        successMsg.classList.add('show');
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          successMsg.classList.add('show');
+        }
       });
     });
   </script>
