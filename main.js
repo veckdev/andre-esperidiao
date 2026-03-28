@@ -17,7 +17,7 @@ const projects = [
     year: '2026',
     cover: 'assets/street-banner.jpg',
     hero: 'assets/street-001.jpg',
-    main: 'assets/street-002.jpg',
+    main: 'assets/street-005.jpg',
     images: ['assets/street-001.jpg', 'assets/street-002.jpg', 'assets/street-003.jpg', 'assets/street-004.jpg', 'assets/street-005.jpg', 'assets/street-006.jpg', 'assets/street-007.jpg', 'assets/street-008.jpg', 'assets/street-009.jpg'],
     category: 'Fashion',
   },
@@ -29,7 +29,7 @@ const projects = [
     cover: 'assets/vico-banner.jpg',
     hero: 'assets/vico-007.jpg', /*work card*/
     main: 'assets/vico-007.jpg', /*index hero*/
-    images: ['assets/vico-001.jpg', 'assets/vico-002.jpg', 'assets/vico-003.jpg'],
+    images: ['assets/vico-001.jpg', 'assets/vico-002.jpg', 'assets/vico-003.jpg', 'assets/vico-004.jpg', 'assets/vico-005.jpg', 'assets/vico-006.jpg', 'assets/vico-007.jpg'],
     category: 'Beauty',
   },
   {
