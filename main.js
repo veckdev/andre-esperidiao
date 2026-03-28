@@ -4,8 +4,10 @@ const projects = [
     title: 'Edge',
     subtitle: 'Shot at Whiterock, this series sits somewhere between exposure and restraint — not just in the landscape, but in the way the body occupies it. Nothing feels fixed or performative.\n\nMasculinity here isn\'t treated as a single idea, but as something fluid, shifting from frame to frame. At times it feels grounded and self-assured, at others distant, almost untouchable. The model moves through these states without fully settling into any of them.\n\nThe result is less about defining a persona and more about allowing space for contradiction — a quiet tension between control and vulnerability, presence and escape.',
     year: '2026',
-    cover: 'assets/edge.webp',
-    images: ['assets/edge.webp', 'assets/work-4.jpg', 'assets/work-6.jpg'],
+    cover: 'assets/edge-banner.jpg',
+    hero: 'assets/edge-001.jpg',
+    main: 'assets/edge-banner.jpg',
+    images: ['assets/edge-001.jpg', 'assets/edge-002.jpg', 'assets/edge-003.jpg', 'assets/edge-004.jpg', 'assets/edge-005.jpg', 'assets/edge-006.jpg'],
     category: 'Editorial',
   },
   {
@@ -14,7 +16,8 @@ const projects = [
     subtitle: 'Grafton Street doesn\'t stop for anyone. The series leans into that — finding stillness inside movement, composure inside noise. The Ganni trench coat becomes a kind of armor. Not protective in the defensive sense, but in the way certain clothes allow you to move through a space entirely on your own terms. This is street style without the casualness the term implies. Every frame feels considered — not staged, but chosen.',
     year: '2026',
     cover: 'assets/street-banner.jpg',
-    hero: 'assets/street-002.jpg',
+    hero: 'assets/street-001.jpg',
+    main: 'assets/street-002.jpg',
     images: ['assets/street-001.jpg', 'assets/street-002.jpg', 'assets/street-003.jpg', 'assets/street-004.jpg', 'assets/street-005.jpg', 'assets/street-006.jpg', 'assets/street-007.jpg', 'assets/street-008.jpg', 'assets/street-009.jpg'],
     category: 'Fashion',
   },
@@ -23,19 +26,23 @@ const projects = [
     title: 'Vico Bathing',
     subtitle: 'Light & Adornmen',
     year: '2026',
-    cover: 'assets/bathing-banner.jpg',
-    images: ['assets/hero-3.jpg', 'assets/work-3.jpg', 'assets/work-2.jpg'],
+    cover: 'assets/vico-banner.jpg',
+    hero: 'assets/vico-007.jpg', /*work card*/
+    main: 'assets/vico-007.jpg', /*index hero*/
+    images: ['assets/vico-001.jpg', 'assets/vico-002.jpg', 'assets/vico-003.jpg'],
     category: 'Beauty',
   },
   {
-    id: 'silhouette',
-    title: 'Silhouette',
-    subtitle: 'Form & Structure',
-    year: '2022',
-    cover: 'assets/work-1.jpg',
-    images: ['assets/work-1.jpg', 'assets/hero-1.jpg', 'assets/work-4.jpg'],
+    id: 'close',
+    title: 'Close',
+    subtitle: 'Shot at a monument by Oscar Niemeyer, this series finds its tension in the encounter between body and architecture — two languages of form in quiet conversation. The pieces worn are from the photographer\'s own family archive, styled by him. There\'s an intimacy to that — clothes that carry history, worn as if for the first time. Geometry here isn\'t cold. It frames, it holds, it gives the figure somewhere to exist against. The result is a portrait of restraint that never feels empty.',
+    year: '2014',
+    cover: 'assets/close-banner.jpg',
+    hero: 'assets/close-001.jpg',
+    main: 'assets/close-002.jpg',
+    images: ['assets/close-001.jpg', 'assets/close-002.jpg', 'assets/close-003.jpg', 'assets/close-004.jpg', 'assets/close-005.jpg', 'assets/close-006.jpg', 'assets/close-007.jpg'],
     category: 'Editorial',
-  },
+  }, /*
   {
     id: 'ethereal',
     title: 'Ethereal',
@@ -53,7 +60,7 @@ const projects = [
     cover: 'assets/work-5.jpg',
     images: ['assets/work-5.jpg', 'assets/work-3.jpg', 'assets/work-6.jpg'],
     category: 'Art',
-  },
+  },*/
 ];
 
 function initNavigation() {

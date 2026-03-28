@@ -70,7 +70,7 @@
 
       page.innerHTML = `
       <section style="min-height:100svh;position:relative;">
-        <img src="${project.cover}" alt="${project.title}" class="project-hero-img" />
+        <img src="${project.cover ?? project.hero}" alt="${project.title}" class="project-hero-img" />
       </section>
 
       <section class="section-padding project-info">
