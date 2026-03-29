@@ -23,7 +23,7 @@ const projects = [
   },
   {
     id: 'vico',
-    title: 'Vico Bathing',
+    title: 'The Irish Series',
     subtitle: 'Light & Adornmen',
     year: '2026',
     cover: 'assets/vico-banner.jpg',
@@ -36,12 +36,12 @@ const projects = [
     id: 'close',
     title: 'Close',
     subtitle: 'Shot at a monument by Oscar Niemeyer, this series finds its tension in the encounter between body and architecture — two languages of form in quiet conversation. The pieces worn are from the photographer\'s own family archive, styled by him. There\'s an intimacy to that — clothes that carry history, worn as if for the first time. Geometry here isn\'t cold. It frames, it holds, it gives the figure somewhere to exist against. The result is a portrait of restraint that never feels empty.',
-    year: '2014',
+    year: '2020',
     cover: 'assets/close-banner.jpg',
-    hero: 'assets/close-001.jpg',
+    hero: 'assets/close-005.jpg',
     main: 'assets/close-002.jpg',
-    images: ['assets/close-001.jpg', 'assets/close-002.jpg', 'assets/close-003.jpg', 'assets/close-004.jpg', 'assets/close-005.jpg', 'assets/close-006.jpg', 'assets/close-007.jpg'],
-    category: 'Editorial',
+    images: ['assets/close-007.jpg', 'assets/close-002.jpg', 'assets/close-004.jpg', 'assets/close-001.jpg', 'assets/close-006.jpg', 'assets/close-003.jpg', 'assets/close-005.jpg'],
+    category: 'Serena Marques',
   }, /*
   {
     id: 'ethereal',
