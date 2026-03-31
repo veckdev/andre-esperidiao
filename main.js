@@ -2,7 +2,7 @@ const projects = [
   {
     id: 'edge',
     title: 'Edge',
-    subtitle: 'Shot at Whiterock, this series sits somewhere between exposure and restraint — not just in the landscape, but in the way the body occupies it. Nothing feels fixed or performative.\n\nMasculinity here isn\'t treated as a single idea, but as something fluid, shifting from frame to frame. At times it feels grounded and self-assured, at others distant, almost untouchable. The model moves through these states without fully settling into any of them.\n\nThe result is less about defining a persona and more about allowing space for contradiction — a quiet tension between control and vulnerability, presence and escape.',
+    subtitle: 'Shot at Whiterock, this series sits somewhere between exposure and restraint, not just in the landscape, but in the way the body occupies it. Nothing feels fixed or performative.\n\nMasculinity here isn\'t treated as a single idea, but as something fluid, shifting from frame to frame. At times it feels grounded and self-assured, at others distant, almost untouchable. The model moves through these states without fully settling into any of them.\n\nThe result is less about defining a persona and more about allowing space for contradiction, a quiet tension between control and vulnerability, presence and escape.',
     year: '2026',
     cover: 'assets/edge-newbanner.jpg',
     hero: 'assets/edge-001.jpg',
@@ -13,7 +13,7 @@ const projects = [
   {
     id: 'street',
     title: 'Street Style Season',
-    subtitle: 'Grafton Street doesn\'t stop for anyone. The series leans into that — finding stillness inside movement, composure inside noise. The Ganni trench coat becomes a kind of armor. Not protective in the defensive sense, but in the way certain clothes allow you to move through a space entirely on your own terms. This is street style without the casualness the term implies. Every frame feels considered — not staged, but chosen.',
+    subtitle: 'Grafton Street doesn\'t stop for anyone. The series leans into that, finding stillness inside movement, composure inside noise. The Ganni trench coat becomes a kind of armor. Not protective in the defensive sense, but in the way certain clothes allow you to move through a space entirely on your own terms. This is street style without the casualness the term implies. Every frame feels considered, not staged, but chosen.',
     year: '2026',
     cover: 'assets/street-banner.jpg',
     hero: 'assets/street-001.jpg', /*work card*/
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 'vico',
     title: 'The Irish Series',
-    subtitle: 'The Irish Series is an ongoing photographic exploration of identity, presence, and cultural memory. Through encounters across Ireland, I photograph individuals who embody a certain Irish essence — often reflected in their Gaelic names, their gestures, and the quiet strength carried in their presence. These are people I cross paths with, not casted, but found. The work moves through elements deeply rooted in Irish culture: the ritual of sea swimming, the stillness of a pint of Guinness, and the enduring archetypes of the Irish man. Each image exists between documentary and editorial — raw yet intentional, intimate yet structured. At its core, the series is not about defining Ireland, but about observing it closely — through faces, atmospheres, and fleeting moments that reveal something both personal and collective.',
+    subtitle: 'The Irish Series is an ongoing photographic exploration of identity, presence, and cultural memory. Through encounters across Ireland, I photograph individuals who embody a certain Irish essence, often reflected in their Gaelic names, their gestures, and the quiet strength carried in their presence. These are people I cross paths with, not casted, but found. The work moves through elements deeply rooted in Irish culture: the ritual of sea swimming, the stillness of a pint of Guinness, and the enduring archetypes of the Irish man. Each image exists between documentary and editorial, raw yet intentional, intimate yet structured. At its core, the series is not about defining Ireland, but about observing it closely, through faces, atmospheres, and fleeting moments that reveal something both personal and collective.',
     year: '2026',
     cover: 'assets/vico-banner.jpg',
     hero: 'assets/vico-005.jpg', /*work card*/
@@ -35,7 +35,7 @@ const projects = [
   {
     id: 'close',
     title: 'Close',
-    subtitle: 'Shot at a monument by Oscar Niemeyer, this series finds its tension in the encounter between body and architecture — two languages of form in quiet conversation. The pieces worn are from the photographer\'s own family archive, styled by him. There\'s an intimacy to that — clothes that carry history, worn as if for the first time. Geometry here isn\'t cold. It frames, it holds, it gives the figure somewhere to exist against. The result is a portrait of restraint that never feels empty.',
+    subtitle: 'Shot at a monument by Oscar Niemeyer, this series finds its tension in the encounter between body and architecture, two languages of form in quiet conversation. The pieces worn are from the photographer\'s own family archive, styled by him. There\'s an intimacy to that, clothes that carry history, worn as if for the first time. Geometry here isn\'t cold. It frames, it holds, it gives the figure somewhere to exist against. The result is a portrait of restraint that never feels empty.',
     year: '2020',
     cover: 'assets/close-banner.jpg',
     hero: 'assets/close-005.jpg',
