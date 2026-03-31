@@ -8,7 +8,7 @@ const projects = [
     hero: 'assets/edge-001.jpg',
     main: 'assets/edge-banner.jpg',
     images: ['assets/edge-004.jpg', 'assets/edge-001.jpg', 'assets/edge-005.jpg', 'assets/edge-003.jpg', 'assets/edge-006.jpg', 'assets/edge-007.jpg', 'assets/edge-banner.jpg'],
-    category: 'Featuring: Pablo Ilian Toso',
+    /*category: 'Featuring: Pablo Ilian Toso',*/
   },
   {
     id: 'street',
@@ -19,7 +19,7 @@ const projects = [
     hero: 'assets/street-001.jpg', /*work card*/
     main: 'assets/street-hero.jpg', /*index hero*/
     images: ['assets/street-001.jpg', 'assets/street-002.jpg', 'assets/street-003.jpg', 'assets/street-004.jpg', 'assets/street-005.jpg', 'assets/street-006.jpg', 'assets/street-007.jpg', 'assets/street-008.jpg', 'assets/street-009.jpg'],
-    category: 'Model: Maria Ermolova',
+    /*category: 'Model: Maria Ermolova',*/
   },
   {
     id: 'vico',
@@ -30,7 +30,7 @@ const projects = [
     hero: 'assets/vico-005.jpg', /*work card*/
     main: 'assets/vico-007.jpg', /*index hero*/
     images: ['assets/vico-007.jpg', 'assets/vico-002.jpg', 'assets/vico-003.jpg', 'assets/vico-004.jpg', 'assets/vico-005.jpg', 'assets/vico-001.jpg', 'assets/vico-006.jpg'],
-    category: 'Featuring: Darragh O\'Sullivan',
+    /*category: 'Featuring: Darragh O\'Sullivan',*/
   },
   {
     id: 'close',
@@ -41,7 +41,7 @@ const projects = [
     hero: 'assets/close-005.jpg',
     main: 'assets/close-002.jpg',
     images: ['assets/close-007.jpg', 'assets/close-002.jpg', 'assets/close-004.jpg', 'assets/close-001.jpg', 'assets/close-006.jpg', 'assets/close-003.jpg', 'assets/close-005.jpg'],
-    category: 'Model: Serena Marques',
+    /*category: 'Model: Serena Marques',*/
   }, /*
   {
     id: 'ethereal',
