@@ -60,7 +60,9 @@ img {
 /* ─── Nav (inner pages — dark text) ─────────────── */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -69,7 +71,9 @@ img {
   pointer-events: none;
 }
 
-.nav > * { pointer-events: auto; }
+.nav>* {
+  pointer-events: auto;
+}
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
@@ -83,7 +87,9 @@ img {
   transition: opacity 0.2s;
 }
 
-.nav-logo:hover { opacity: 1; }
+.nav-logo:hover {
+  opacity: 1;
+}
 
 .nav-links {
   display: flex;
@@ -103,7 +109,9 @@ img {
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--foreground); }
+.nav-links a:hover {
+  color: var(--foreground);
+}
 
 .nav-burger {
   display: none;
@@ -123,23 +131,33 @@ img {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.nav-burger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-burger.open span:nth-child(2) { opacity: 0; }
-.nav-burger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-burger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 .mobile-menu {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: rgba(10,10,10,0.97);
+  background: rgba(10, 10, 10, 0.97);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
 }
 
-.mobile-menu.open { display: flex; }
+.mobile-menu.open {
+  display: flex;
+}
 
 .mobile-menu a {
   font-family: 'Cormorant Garamond', serif;
@@ -152,12 +170,22 @@ img {
   transition: opacity 0.2s;
 }
 
-.mobile-menu a:hover { opacity: 1; }
+.mobile-menu a:hover {
+  opacity: 1;
+}
 
 @media (max-width: 768px) {
-  .nav { padding: 1.5rem; }
-  .nav-links { display: none; }
-  .nav-burger { display: flex; }
+  .nav {
+    padding: 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-burger {
+    display: flex;
+  }
 }
 
 
@@ -581,79 +609,45 @@ nav.desktop-nav {
 }
 
 /* ─── Contact ────────────────────────────────────── */
-.contact-form {
-  margin-top: 4rem;
+.contact-minimal {
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 36rem;
+  justify-content: flex-end;
+  padding: 0 2.5rem 6rem;
 }
 
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: var(--muted-foreground);
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  padding: 0.75rem 0;
-  font-size: 0.875rem;
-  color: var(--foreground);
-  font-family: inherit;
-  font-weight: 300;
-  outline: none;
-  transition: border-color 0.3s;
-  resize: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-bottom-color: var(--foreground);
-}
-
-.contact-submit {
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--foreground);
-  padding-bottom: 0.25rem;
-  cursor: pointer;
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--foreground);
-  display: inline-block;
-  transition: opacity 0.2s;
-}
-
-.contact-submit:hover {
-  opacity: 0.6;
-}
-
-.success-message {
-  display: none;
-  margin-top: 4rem;
-  color: var(--muted-foreground);
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.success-message.show {
-  display: block;
-}
-
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+  .contact-minimal {
+    padding: 0 1.5rem 4rem;
   }
+}
+
+.contact-minimal .font-sans-ui {
+  margin-bottom: 2.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-line {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.contact-line:hover {
+  border-bottom-color: var(--foreground);
 }
 
 /* ─── Footer (inner pages) ───────────────────────── */
