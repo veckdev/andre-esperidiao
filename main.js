@@ -1,3 +1,14 @@
+// ─────────────────────────────────────────────
+// INDEX SLIDESHOW IMAGES
+// Add or remove image paths here to control
+// what appears on the homepage.
+// ─────────────────────────────────────────────
+const indexImages = [
+  'assets/img_1949.jpg',
+  'assets/img_3706.jpg',
+  'assets/edge-003.jpg',
+];
+
 const projects = [
   {
     id: 'edge',
@@ -154,8 +165,65 @@ function initHeroAnimations() {
   }, 50);
 }
 
+function initIndex() {
+  const container = document.getElementById('scrollContainer');
+  if (!container) return;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  indexImages.forEach(src => {
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+
+    img.addEventListener('load', () => {
+      if (img.naturalHeight > img.naturalWidth) {
+        // portrait: fit full image within 100vh, slide width = natural aspect ratio
+        const ratio = img.naturalWidth / img.naturalHeight;
+        slide.style.flex = `0 0 ${100 * ratio}vh`;
+        slide.style.width = `${100 * ratio}vh`;
+        img.style.objectFit = 'cover';
+      }
+    });
+
+    slide.appendChild(img);
+    container.appendChild(slide);
+  });
+
+  // wheel → horizontal scroll on desktop
+  container.addEventListener('wheel', e => {
+    if (window.innerWidth > 768) {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY + e.deltaX;
+    }
+  }, { passive: false });
+
+  // burger
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      burger.classList.toggle('open', open);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        burger.classList.remove('open');
+      });
+    });
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   initPageTransition();
+  initIndex();
   initNavigation();
   initHeroAnimations();
   initRevealImages();
