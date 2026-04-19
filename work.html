@@ -18,11 +18,6 @@
   <header id="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo font-serif-display">Andre Esperidiao</a>
-      <nav class="desktop-nav">
-        <a href="work.html" class="nav-link">Work</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
       <button id="menu-toggle">Menu</button>
     </div>
   </header>
@@ -60,17 +55,10 @@
         el.href = `project.html?id=${project.id}`;
         el.className = 'project-link';
         el.innerHTML = `
-          <div class="reveal-image image-container work-img-centered md-w-60" style="aspect-ratio:3/4;">
+          <div class="reveal-image image-container work-img-centered md-w-40" style="aspect-ratio:3/4;">
             <div class="shimmer"></div>
             <img src="${project.hero ?? project.cover}" alt="${project.title}" loading="lazy"
                  style="width:100%;height:100%;object-fit:cover;" />
-          </div>
-          <div class="project-meta work-img-centered md-w-60">
-            <div>
-              <h2 class="font-serif-display project-title">${project.title}</h2>
-              <!-- <p class="font-sans-ui text-muted" style="margin-top:0.25rem;">${project.category}</p> -->
-            </div>
-            <span class="font-sans-ui text-muted tabular-nums">${project.year}</span>
           </div>
         `;
         grid.appendChild(el);
