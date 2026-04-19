@@ -14,22 +14,22 @@ const indexImages = [
 const projects = [
   {
     id: 'edge',
-    cover: 'assets/edge-newbanner.jpg',
+    cover: 'assets/edge-001.jpg',
     images: ['assets/edge-004.jpg', 'assets/edge-001.jpg', 'assets/edge-005.jpg', 'assets/edge-003.jpg', 'assets/edge-006.jpg', 'assets/edge-007.jpg', 'assets/edge-banner.jpg'],
   },
   {
     id: 'street',
-    cover: 'assets/street-banner.jpg',
+    cover: 'assets/street-007.jpg',
     images: ['assets/street-001.jpg', 'assets/street-002.jpg', 'assets/street-003.jpg', 'assets/street-004.jpg', 'assets/street-005.jpg', 'assets/street-006.jpg', 'assets/street-007.jpg', 'assets/street-008.jpg', 'assets/street-009.jpg'],
   },
   {
     id: 'vico',
-    cover: 'assets/vico-banner.jpg',
+    cover: 'assets/vico-005.jpg',
     images: ['assets/vico-007.jpg', 'assets/vico-002.jpg', 'assets/vico-003.jpg', 'assets/vico-004.jpg', 'assets/vico-005.jpg', 'assets/vico-001.jpg', 'assets/vico-006.jpg'],
   },
   {
     id: 'close',
-    cover: 'assets/close-banner.jpg',
+    cover: 'assets/close-005.jpg',
     images: ['assets/close-007.jpg', 'assets/close-002.jpg', 'assets/close-004.jpg', 'assets/close-001.jpg', 'assets/close-006.jpg', 'assets/close-003.jpg', 'assets/close-005.jpg'],
   },
 ];
@@ -132,11 +132,8 @@ function initProject() {
 
   const imageSeriesHtml = project.images.map(src => `
     <div class="work-img-centered md-w-40">
-      <div class="reveal-image image-container" style="aspect-ratio:3/4;">
-        <div class="shimmer"></div>
-        <img src="${src}" alt="" loading="lazy"
-             style="width:100%;height:100%;object-fit:cover;" />
-      </div>
+      <img src="${src}" alt="" loading="lazy" class="reveal-image"
+           style="width:100%;height:auto;display:block;" />
     </div>`
   ).join('');
 
