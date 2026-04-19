@@ -88,23 +88,23 @@
 
 <body>
 
-  <header id="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo font-serif-display">André Esperidião</a>
-      <nav class="desktop-nav">
-        <a href="work.html" class="nav-link">Work</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-      <button id="menu-toggle">Menu</button>
-    </div>
+  <header class="nav">
+    <a href="index.html" class="nav-logo">André Esperidião</a>
+    <ul class="nav-links">
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <div id="mobile-menu">
+  <nav class="mobile-menu" id="mobileMenu">
     <a href="work.html">Work</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-  </div>
+  </nav>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox"></div>
