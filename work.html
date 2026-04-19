@@ -1,14 +1,91 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work — André Esperidião</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Lightbox overlay ───────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: #0a0a0a;
+      flex-direction: row;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scrollbar-width: none;
+    }
+
+    .lightbox::-webkit-scrollbar {
+      display: none;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    /* each image in lightbox */
+    .lightbox-slide {
+      flex: 0 0 auto;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-slide img {
+      height: 100%;
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* close button */
+    .lightbox-close {
+      position: fixed;
+      top: 2rem;
+      right: 2.5rem;
+      z-index: 210;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+      display: none;
+    }
+
+    .lightbox-close:hover {
+      color: #fff;
+    }
+
+    .lightbox.open~.lightbox-close,
+    .lightbox-close.visible {
+      display: block;
+    }
+
+    /* wheel → horizontal on desktop */
+  </style>
 </head>
+
 <body>
 
   <header id="site-header">
@@ -29,6 +106,10 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox"></div>
+  <button class="lightbox-close" id="lightboxClose">Close</button>
+
   <main class="page">
     <section style="padding: 0 1.5rem; padding-top: 10rem;">
       <div class="work-grid" id="work-grid"></div>
@@ -41,4 +122,5 @@
 
   <script src="main.js"></script>
 </body>
+
 </html>
