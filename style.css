@@ -493,7 +493,7 @@ nav.desktop-nav {
 .work-grid {
   display: flex;
   flex-direction: column;
-  gap: 15vh;
+  gap: 20vh;
 }
 
 .project-link {
