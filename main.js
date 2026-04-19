@@ -4,8 +4,8 @@
 // what appears on the homepage.
 // ─────────────────────────────────────────────
 const indexImages = [
-  'assets/img_1949.jpg',
-  'assets/img_3706.jpg',
+  'assets/IMG_1949.jpg',
+  'assets/IMG_3706.jpg',
   'assets/edge-003.jpg',
 ];
 
