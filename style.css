@@ -2,7 +2,7 @@
 
 /* ─── Variables ──────────────────────────────────── */
 :root {
-  --background:         #0a0a0a;
+  --background:         #f5f5f7;
   --foreground:         #ffffff;
   --muted:              #1a1a1a;
   --muted-foreground:   rgba(255, 255, 255, 0.45);
