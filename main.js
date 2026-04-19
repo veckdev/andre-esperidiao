@@ -169,8 +169,6 @@ function initIndex() {
   const container = document.getElementById('scrollContainer');
   if (!container) return;
 
-  document.getElementById('year').textContent = new Date().getFullYear();
-
   indexImages.forEach(src => {
     const slide = document.createElement('div');
     slide.className = 'slide';
@@ -222,6 +220,9 @@ function initIndex() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.footer-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
   initPageTransition();
   initIndex();
   initNavigation();
