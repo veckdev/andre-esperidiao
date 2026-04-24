@@ -50,7 +50,7 @@ function initIndex() {
     img.alt = '';
 
     img.addEventListener('load', () => {
-      if (window.innerWidth > 768 && img.naturalHeight > img.naturalWidth) {
+      if (img.naturalHeight > img.naturalWidth) {
         const ratio = img.naturalWidth / img.naturalHeight;
         slide.style.flex = `0 0 ${100 * ratio}vh`;
         slide.style.width = `${100 * ratio}vh`;
@@ -68,24 +68,6 @@ function initIndex() {
       container.scrollLeft += e.deltaY + e.deltaX;
     }
   }, { passive: false });
-
-  // burger (index has its own nav markup)
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      burger.classList.toggle('open', open);
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        burger.classList.remove('open');
-      });
-    });
-  }
 }
 
 // ─────────────────────────────────────────────────────
@@ -255,6 +237,37 @@ function initHeroAnimations() {
 }
 
 // ─────────────────────────────────────────────────────
+// BURGER (shared across all pages)
+// ─────────────────────────────────────────────────────
+function initBurger() {
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('mobileMenuClose');
+  if (!burger || !mobileMenu) return;
+
+  const openMenu = () => {
+    mobileMenu.classList.add('open');
+    burger.style.opacity = '0';
+    burger.style.pointerEvents = 'none';
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileMenu.classList.remove('open');
+    burger.style.opacity = '1';
+    burger.style.pointerEvents = 'auto';
+    document.body.style.overflow = '';
+  };
+
+  burger.addEventListener('click', openMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+}
+
+// ─────────────────────────────────────────────────────
 // BOOT
 // ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
@@ -267,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initIndex();
   initWork();
   initProject();
+  initBurger();
   initNavigation();
   initHeroAnimations();
   initRevealImages();
