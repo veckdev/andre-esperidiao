@@ -242,25 +242,23 @@ function initHeroAnimations() {
 function initBurger() {
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('mobileMenuClose');
   if (!burger || !mobileMenu) return;
 
   const openMenu = () => {
     mobileMenu.classList.add('open');
-    burger.style.opacity = '0';
-    burger.style.pointerEvents = 'none';
+    burger.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
 
   const closeMenu = () => {
     mobileMenu.classList.remove('open');
-    burger.style.opacity = '1';
-    burger.style.pointerEvents = 'auto';
+    burger.classList.remove('open');
     document.body.style.overflow = '';
   };
 
-  burger.addEventListener('click', openMenu);
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
 
   mobileMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeMenu);
