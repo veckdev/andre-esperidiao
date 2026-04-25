@@ -50,7 +50,7 @@ function initIndex() {
     img.alt = '';
 
     img.addEventListener('load', () => {
-      if (img.naturalHeight > img.naturalWidth) {
+      if (window.innerWidth > 768 && img.naturalHeight > img.naturalWidth) {
         const ratio = img.naturalWidth / img.naturalHeight;
         slide.style.flex = `0 0 ${100 * ratio}vh`;
         slide.style.width = `${100 * ratio}vh`;
