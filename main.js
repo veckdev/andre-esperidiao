@@ -119,7 +119,7 @@ function initProject() {
   ).join('');
 
   page.innerHTML = `
-    <section class="image-series" style="padding-top:10rem;">
+    <section class="image-series page-top" style="padding-bottom:5rem;">
       ${imageSeriesHtml}
     </section>
   `;
@@ -143,37 +143,6 @@ function initProject() {
 // ─────────────────────────────────────────────────────
 // SHARED
 // ─────────────────────────────────────────────────────
-function initNavigation() {
-  const toggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (!toggle || !mobileMenu) return;
-
-  let open = false;
-
-  toggle.addEventListener('click', () => {
-    open = !open;
-    toggle.textContent = open ? 'Close' : 'Menu';
-    mobileMenu.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      open = false;
-      toggle.textContent = 'Menu';
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // active link
-  const file = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
-    const href = (link.getAttribute('href') || '').split('/').pop();
-    if (href === file) link.classList.add('active');
-  });
-}
-
 function initRevealImages() {
   const elements = document.querySelectorAll('.reveal-image');
   if (!elements.length) return;
@@ -226,15 +195,6 @@ function initPageTransition() {
   });
 }
 
-function initHeroAnimations() {
-  const title = document.querySelector('.hero-title');
-  const year = document.querySelector('.hero-year');
-  setTimeout(() => {
-    if (title) title.classList.add('animate');
-    if (year) year.classList.add('animate');
-  }, 50);
-}
-
 // ─────────────────────────────────────────────────────
 // BURGER (shared across all pages)
 // ─────────────────────────────────────────────────────
@@ -278,8 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initWork();
   initProject();
   initBurger();
-  initNavigation();
-  initHeroAnimations();
   initRevealImages();
   initImageLoad();
 });
