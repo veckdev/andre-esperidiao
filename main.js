@@ -78,17 +78,22 @@ function initWork() {
   if (!grid) return;
 
   projects.forEach(project => {
-    const el = document.createElement('a');
-    el.href = `project.html?id=${project.id}`;
-    el.className = 'project-link';
-    el.innerHTML = `
+    const card = document.createElement('div');
+    card.className = 'work-card';
+
+    const link = document.createElement('a');
+    link.href = `project.html?id=${project.id}`;
+    link.className = 'project-link';
+    link.innerHTML = `
       <div class="reveal-image image-container work-img-centered md-w-40" style="aspect-ratio:3/4;">
         <div class="shimmer"></div>
         <img src="${project.cover}" alt="" loading="lazy"
              style="width:100%;height:100%;object-fit:cover;" />
       </div>
     `;
-    grid.appendChild(el);
+
+    card.appendChild(link);
+    grid.appendChild(card);
   });
 }
 
