@@ -119,7 +119,7 @@ function initProject() {
   ).join('');
 
   page.innerHTML = `
-    <section class="image-series page-top" style="padding-bottom:5rem;">
+    <section class="image-series" style="padding-top:8rem;padding-bottom:5rem;">
       ${imageSeriesHtml}
     </section>
   `;
