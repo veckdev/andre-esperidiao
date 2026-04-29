@@ -184,13 +184,12 @@ function initImageLoad() {
 }
 
 function initPageTransition() {
-  const main = document.querySelector('main.page');
-  if (!main) return;
-  main.style.opacity = '0';
+  const target = document.querySelector('main.page') || document.body;
+  target.style.opacity = '0';
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      main.style.transition = 'opacity 0.4s cubic-bezier(0.22,1,0.36,1)';
-      main.style.opacity = '1';
+      target.style.transition = 'opacity 0.4s cubic-bezier(0.22,1,0.36,1)';
+      target.style.opacity = '1';
     });
   });
 }
