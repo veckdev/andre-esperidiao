@@ -35,8 +35,8 @@ const projects = [
     cover: 'assets/close-005.jpg',
     images: ['assets/close-007.jpg', 'assets/close-002.jpg', 'assets/close-004.jpg', 'assets/close-001.jpg', 'assets/close-006.jpg', 'assets/close-003.jpg', 'assets/close-005.jpg'],
   },
-  {
-    /* id: 'new',
+  /*{
+    id: 'new',
     cover: 'assets/IMG_2277.jpg',
     images: ['assets/.jpg'],
   }*/
