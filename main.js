@@ -6,6 +6,9 @@ const indexImages = [
   'assets/IMG_1949.jpg',
   'assets/IMG_3706.jpg',
   'assets/edge-003.jpg',
+  'assets/IMG_2697.jpg',
+  'assets/IMG_2277.jpg',
+  
 ];
 
 // ─────────────────────────────────────────────────────
@@ -15,7 +18,7 @@ const projects = [
   {
     id: 'edge',
     cover: 'assets/edge-001.jpg',
-    images: ['assets/edge-004.jpg', 'assets/edge-001.jpg', 'assets/edge-005.jpg', 'assets/edge-003.jpg', 'assets/edge-006.jpg', 'assets/edge-007.jpg', 'assets/edge-banner.jpg'],
+    images: ['assets/edge-001.jpg', 'assets/edge-003.jpg'],
   },
   {
     id: 'street',
@@ -32,6 +35,11 @@ const projects = [
     cover: 'assets/close-005.jpg',
     images: ['assets/close-007.jpg', 'assets/close-002.jpg', 'assets/close-004.jpg', 'assets/close-001.jpg', 'assets/close-006.jpg', 'assets/close-003.jpg', 'assets/close-005.jpg'],
   },
+  {
+    /* id: 'new',
+    cover: 'assets/IMG_2277.jpg',
+    images: ['assets/.jpg'],
+  }*/
 ];
 
 // ─────────────────────────────────────────────────────
