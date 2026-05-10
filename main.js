@@ -7,6 +7,7 @@ const indexImages = [
   'assets/edge-003.jpg',
   'assets/IMG_2697.jpg',
   'assets/IMG_2277.jpg',
+  'assets/IMG_0681.jpg',
 ];
 
 // ─────────────────────────────────────────────────────
@@ -35,7 +36,12 @@ const projects = [
     cover: 'assets/edge-001.jpg',
     images: [
       'assets/edge-001.jpg',
-      'assets/edge-003.jpg'
+      'assets/edge-003.jpg',
+      'assets/edge-002.jpg',
+      'assets/edge-004.jpg',
+      'assets/edge-005.jpg',
+      'assets/edge-006.jpg',
+      'assets/IMG_0734.jpg',
     ],
   },
 
