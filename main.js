@@ -7,7 +7,7 @@ const indexImages = [
   'assets/edge-003.jpg',
   'assets/IMG_2697.jpg',
   'assets/IMG_2277.jpg',
-  'assets/IMG_0681.jpg',
+  'assets/IMG_0734.jpg',
 ];
 
 // ─────────────────────────────────────────────────────
@@ -23,7 +23,7 @@ const projects = [
       'assets/IMG_2277.jpg',
       'assets/IMG_2697.jpg',
       'assets/IMG_2691.jpg',
-      'assets/IMG_2282V.jpg',
+      'assets/IMG_2240c.jpg',
       'assets/IMG_1949b.jpg',
       'assets/IMG_2243.jpg',
       'assets/IMG_2282.jpg',
@@ -71,6 +71,7 @@ const projects = [
       'assets/vico-002.jpg',
       'assets/vico-003.jpg',
       'assets/vico-004.jpg',
+      'assets/vico-banner.jpg',
       'assets/vico-005.jpg',
       'assets/vico-001.jpg',
       'assets/vico-006.jpg'
