@@ -1,6 +1,5 @@
 // ─────────────────────────────────────────────────────
 // INDEX SLIDESHOW IMAGES
-// Add or remove paths to control the homepage slideshow.
 // ─────────────────────────────────────────────────────
 const indexImages = [
   'assets/IMG_1949.jpg',
@@ -8,38 +7,84 @@ const indexImages = [
   'assets/edge-003.jpg',
   'assets/IMG_2697.jpg',
   'assets/IMG_2277.jpg',
-  
 ];
 
 // ─────────────────────────────────────────────────────
 // PROJECTS
 // ─────────────────────────────────────────────────────
 const projects = [
+
+  {
+    id: 'skin',
+    title: 'In Between Skin',
+    cover: 'assets/IMG_2277.jpg',
+    images: [
+      'assets/IMG_2277.jpg',
+      'assets/IMG_2697.jpg',
+      'assets/IMG_2691.jpg',
+      'assets/IMG_2282V.jpg',
+      'assets/IMG_1949b.jpg',
+      'assets/IMG_2243.jpg',
+      'assets/IMG_2282.jpg',
+    ],
+  },
+
   {
     id: 'edge',
+    title: 'Edge',
     cover: 'assets/edge-001.jpg',
-    images: ['assets/edge-001.jpg', 'assets/edge-003.jpg'],
+    images: [
+      'assets/edge-001.jpg',
+      'assets/edge-003.jpg'
+    ],
   },
+
   {
     id: 'street',
+    title: 'Street',
     cover: 'assets/street-007.jpg',
-    images: ['assets/street-001.jpg', 'assets/street-002.jpg', 'assets/street-003.jpg', 'assets/street-004.jpg', 'assets/street-005.jpg', 'assets/street-006.jpg', 'assets/street-007.jpg', 'assets/street-008.jpg', 'assets/street-009.jpg'],
+    images: [
+      'assets/street-001.jpg',
+      'assets/street-002.jpg',
+      'assets/street-003.jpg',
+      'assets/street-004.jpg',
+      'assets/street-005.jpg',
+      'assets/street-006.jpg',
+      'assets/street-007.jpg',
+      'assets/street-008.jpg',
+      'assets/street-009.jpg'
+    ],
   },
+
   {
     id: 'vico',
+    title: 'Vico',
     cover: 'assets/vico-005.jpg',
-    images: ['assets/vico-007.jpg', 'assets/vico-002.jpg', 'assets/vico-003.jpg', 'assets/vico-004.jpg', 'assets/vico-005.jpg', 'assets/vico-001.jpg', 'assets/vico-006.jpg'],
+    images: [
+      'assets/vico-007.jpg',
+      'assets/vico-002.jpg',
+      'assets/vico-003.jpg',
+      'assets/vico-004.jpg',
+      'assets/vico-005.jpg',
+      'assets/vico-001.jpg',
+      'assets/vico-006.jpg'
+    ],
   },
+
   {
     id: 'close',
+    title: 'Close',
     cover: 'assets/close-005.jpg',
-    images: ['assets/close-007.jpg', 'assets/close-002.jpg', 'assets/close-004.jpg', 'assets/close-001.jpg', 'assets/close-006.jpg', 'assets/close-003.jpg', 'assets/close-005.jpg'],
+    images: [
+      'assets/close-007.jpg',
+      'assets/close-002.jpg',
+      'assets/close-004.jpg',
+      'assets/close-001.jpg',
+      'assets/close-006.jpg',
+      'assets/close-003.jpg',
+      'assets/close-005.jpg'
+    ],
   },
-  /*{
-    id: 'new',
-    cover: 'assets/IMG_2277.jpg',
-    images: ['assets/.jpg'],
-  }*/
 ];
 
 // ─────────────────────────────────────────────────────
@@ -60,6 +105,7 @@ function initIndex() {
     img.addEventListener('load', () => {
       if (window.innerWidth > 768 && img.naturalHeight > img.naturalWidth) {
         const ratio = img.naturalWidth / img.naturalHeight;
+
         slide.style.flex = `0 0 ${100 * ratio}vh`;
         slide.style.width = `${100 * ratio}vh`;
       }
@@ -69,7 +115,6 @@ function initIndex() {
     container.appendChild(slide);
   });
 
-  // wheel → horizontal scroll on desktop
   container.addEventListener('wheel', e => {
     if (window.innerWidth > 768) {
       e.preventDefault();
@@ -86,15 +131,30 @@ function initWork() {
   if (!grid) return;
 
   projects.forEach(project => {
+
     const el = document.createElement('a');
+
     el.href = `project.html?id=${project.id}`;
-    el.className = 'project-link reveal-image image-container work-img-centered md-w-40';
-    el.style.aspectRatio = '3/4';
+
+    el.className =
+      'project-link reveal-image work-img-centered md-w-40';
+
     el.innerHTML = `
-      <div class="shimmer"></div>
-      <img src="${project.cover}" alt="" loading="lazy"
-           style="width:100%;height:100%;object-fit:cover;" />
+      <div class="image-container project-image">
+        <div class="shimmer"></div>
+
+        <img
+          src="${project.cover}"
+          alt="${project.title}"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="project-meta">
+        <h2>${project.title}</h2>
+      </div>
     `;
+
     grid.appendChild(el);
   });
 }
@@ -103,148 +163,221 @@ function initWork() {
 // PROJECT PAGE
 // ─────────────────────────────────────────────────────
 function initProject() {
+
   const page = document.getElementById('project-page');
+
   if (!page) return;
 
-  const id = new URLSearchParams(window.location.search).get('id');
-  const project = projects.find(p => p.id === id);
+  const id =
+    new URLSearchParams(window.location.search).get('id');
+
+  const project =
+    projects.find(p => p.id === id);
 
   if (!project) {
+
     page.innerHTML = `
-      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;">
-        <p class="font-sans-ui text-muted">Project not found</p>
-      </div>`;
+      <div class="not-found">
+        <div>
+          <h1>404</h1>
+          <p>Project not found</p>
+        </div>
+      </div>
+    `;
+
     return;
   }
 
-  document.title = 'André Esperidião — Photography';
+  document.title =
+    `${project.title} — André Esperidião`;
 
-  const imageSeriesHtml = project.images.map(src => `
-    <div class="work-img-centered md-w-40">
-      <img src="${src}" alt="" loading="lazy" class="reveal-image"
-           style="width:100%;height:auto;display:block;" />
-    </div>`
-  ).join('');
+  const imageSeriesHtml =
+    project.images.map(src => `
+      <div class="work-img-centered md-w-40">
+        <img
+          src="${src}"
+          alt=""
+          loading="lazy"
+          class="reveal-image"
+          style="width:100%;height:auto;display:block;"
+        />
+      </div>
+    `).join('');
 
   page.innerHTML = `
-    <section class="image-series" style="padding-top:8rem;padding-bottom:5rem;">
+    <section
+      class="image-series"
+      style="padding-top:8rem;padding-bottom:5rem;"
+    >
       ${imageSeriesHtml}
     </section>
   `;
 
   initRevealImages();
   initImageLoad();
-
-  // scroll past hero on load
-  document.querySelector('.project-hero-img')
-    ?.closest('section')
-    ?.nextElementSibling
-    ?.scrollIntoView({ behavior: 'instant' });
-
-  // animate title, meta, subtitle
-  setTimeout(() => {
-    page.querySelectorAll('.project-detail-title, .project-detail-meta, .project-detail-subtitle')
-      .forEach(el => el.classList.add('animate'));
-  }, 50);
 }
 
 // ─────────────────────────────────────────────────────
 // SHARED
 // ─────────────────────────────────────────────────────
 function initRevealImages() {
-  const elements = document.querySelectorAll('.reveal-image');
+
+  const elements =
+    document.querySelectorAll('.reveal-image');
+
   if (!elements.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  const observer =
+    new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add('visible');
+
+          observer.unobserve(entry.target);
+        }
+      });
+
+    }, {
+      rootMargin: '-80px 0px',
+      threshold: 0.01
     });
-  }, { rootMargin: '-80px 0px', threshold: 0.01 });
 
   elements.forEach(el => observer.observe(el));
 }
 
 function initImageLoad() {
-  document.querySelectorAll('.image-container img').forEach(img => {
-    const container = img.closest('.image-container');
-    const shimmer = container ? container.querySelector('.shimmer') : null;
 
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.6s ease';
+  document.querySelectorAll('.image-container img')
+    .forEach(img => {
 
-    const reveal = () => {
-      img.style.opacity = '1';
-      if (shimmer) shimmer.style.display = 'none';
-    };
+      const container =
+        img.closest('.image-container');
 
-    if (img.complete && img.naturalWidth > 0) {
-      reveal();
-    } else {
-      img.addEventListener('load', reveal);
-      img.addEventListener('error', () => {
-        if (shimmer) shimmer.style.display = 'none';
-      });
-    }
-  });
+      const shimmer =
+        container
+          ? container.querySelector('.shimmer')
+          : null;
+
+      img.style.opacity = '0';
+
+      img.style.transition =
+        'opacity 0.6s ease';
+
+      const reveal = () => {
+
+        img.style.opacity = '1';
+
+        if (shimmer)
+          shimmer.style.display = 'none';
+      };
+
+      if (img.complete && img.naturalWidth > 0) {
+
+        reveal();
+
+      } else {
+
+        img.addEventListener('load', reveal);
+
+        img.addEventListener('error', () => {
+          if (shimmer)
+            shimmer.style.display = 'none';
+        });
+      }
+    });
 }
 
 function initPageTransition() {
-  const target = document.querySelector('main.page') || document.body;
+
+  const target =
+    document.querySelector('main.page')
+    || document.body;
+
   target.style.opacity = '0';
+
   requestAnimationFrame(() => {
+
     requestAnimationFrame(() => {
-      target.style.transition = 'opacity 0.4s cubic-bezier(0.22,1,0.36,1)';
+
+      target.style.transition =
+        'opacity 0.4s cubic-bezier(0.22,1,0.36,1)';
+
       target.style.opacity = '1';
     });
   });
 }
 
 // ─────────────────────────────────────────────────────
-// BURGER (shared across all pages)
+// BURGER
 // ─────────────────────────────────────────────────────
 function initBurger() {
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
+
+  const burger =
+    document.getElementById('burger');
+
+  const mobileMenu =
+    document.getElementById('mobileMenu');
+
   if (!burger || !mobileMenu) return;
 
   const openMenu = () => {
+
     mobileMenu.classList.add('open');
+
     burger.classList.add('open');
+
     document.body.style.overflow = 'hidden';
   };
 
   const closeMenu = () => {
+
     mobileMenu.classList.remove('open');
+
     burger.classList.remove('open');
+
     document.body.style.overflow = '';
   };
 
   burger.addEventListener('click', () => {
-    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+
+    mobileMenu.classList.contains('open')
+      ? closeMenu()
+      : openMenu();
   });
 
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMenu);
-  });
+  mobileMenu.querySelectorAll('a')
+    .forEach(a => {
+
+      a.addEventListener('click', closeMenu);
+    });
 }
 
 // ─────────────────────────────────────────────────────
 // BOOT
 // ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // year in all footers
-  document.querySelectorAll('.footer-year').forEach(el => {
-    el.textContent = new Date().getFullYear();
-  });
+
+  document.querySelectorAll('.footer-year')
+    .forEach(el => {
+
+      el.textContent =
+        new Date().getFullYear();
+    });
 
   initPageTransition();
+
   initIndex();
+
   initWork();
+
   initProject();
+
   initBurger();
+
   initRevealImages();
+
   initImageLoad();
 });
