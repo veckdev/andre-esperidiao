@@ -47,7 +47,7 @@ const projects = [
 
   {
     id: 'street',
-    title: 'Street',
+    title: 'Street Style Season',
     cover: 'assets/street-007.jpg',
     images: [
       'assets/street-001.jpg',
@@ -64,7 +64,7 @@ const projects = [
 
   {
     id: 'vico',
-    title: 'Vico',
+    title: 'The Irish Series',
     cover: 'assets/vico-005.jpg',
     images: [
       'assets/vico-007.jpg',

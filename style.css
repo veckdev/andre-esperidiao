@@ -199,6 +199,36 @@ img {
   text-transform: uppercase;
 
   color: rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.2s;
+}
+
+.mobile-menu a:hover {
+  color: var(--foreground);
+}
+
+.mobile-menu.open a:nth-of-type(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.05s;
+}
+
+.mobile-menu.open a:nth-of-type(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.18s;
+}
+
+.mobile-menu.open a:nth-of-type(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.31s;
 }
 
 /* ───────────────────────────────────── */
@@ -331,6 +361,84 @@ img {
 }
 
 /* ───────────────────────────────────── */
+/* ABOUT */
+/* ───────────────────────────────────── */
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  max-width: 52ch;
+}
+
+.about-text-col p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: var(--muted-foreground);
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* ───────────────────────────────────── */
+/* CONTACT */
+/* ───────────────────────────────────── */
+
+.contact-minimal {
+  position: fixed;
+  bottom: 4rem;
+  left: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+
+  color: var(--foreground);
+
+  transition: opacity 0.2s;
+}
+
+.contact-line:hover {
+  opacity: 0.6;
+}
+
+.font-sans-ui {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+/* ───────────────────────────────────── */
 /* FOOTER */
 /* ───────────────────────────────────── */
 
@@ -359,6 +467,16 @@ img {
 @media (min-width: 769px) {
   .md-w-40 {
     width: 40%;
+  }
+
+  .md-w-80pct {
+    width: 80%;
+  }
+
+  .about-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5rem;
   }
 }
 
@@ -398,5 +516,18 @@ img {
 
   .md-w-40 {
     width: 100%;
+  }
+
+  .md-w-80pct {
+    width: 100%;
+  }
+
+  .contact-minimal {
+    left: 1.5rem;
+    bottom: 3.5rem;
+  }
+
+  .contact-line {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
   }
 }
